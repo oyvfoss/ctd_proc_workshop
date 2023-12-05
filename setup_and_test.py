@@ -15,4 +15,4 @@ subprocess.run("conda run -n ctdenv python -m ipykernel install --user --name=ct
 # Open Jupyter Lab
 print('## CTD WORKSHOP: Success - hooray! Opening Jupyter Lab (a browser window should pop up any second!)')
 print('(To cancel the Jupyter instance, press CTRL+C)')
-subprocess.run("conda run jupyter lab setup/Test_your_setup.ipynb", shell=True, check=True)
+subprocess.run("conda run -n ctdenv jupyter lab setup/Test_your_setup.ipynb", shell=True, check=True)
