@@ -19,6 +19,7 @@ dependencies:
   - tqdm=4.66.1
   - ipympl=0.9.3
   - compliance-checker=5.1.0
+  - git=2.40.1
   - pip=23.2.1
 
   - pip:
