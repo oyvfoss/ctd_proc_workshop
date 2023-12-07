@@ -23,6 +23,6 @@ dependencies:
   - pip=23.2.1
 
   - pip:
-     - git+https://github.com/NPIOcean/oceanograPy.git
+     - git+https://github.com/NPIOcean/oceanograpy.git
 
   
