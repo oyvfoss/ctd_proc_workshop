@@ -1,0 +1,197 @@
+################################################################################
+####  FILE METADATA                                                         ####
+################################################################################
+
+###########################
+### GLOBAL ATTRIBUTES   ###
+###########################
+
+# binned:
+1 decibars (SBE software)
+# history:
+2022-09-10 to 2022-09-18: Data collection.
+2022-09-13 to 2023-03-16: Processed to .cnv using SBE software (details in "SBE_processing").
+2023-12-08: Post-processing.
+# ship:
+Silver Arctic
+# cruise_name:
+FS 2022
+# latitude:
+78.9532
+# longitude:
+-9.0077
+# SBE_processing:
+SBE SOFTWARE PROCESSING STEPS (extracted from .cnv file header):
+- Raw data read from e.g. 006.HEX, FS2022_CTD.XMLCON.
+- Oxygen hysteresis correction applied.
+- Oxygen tau correction applied.
+- Low-pass filter with time constant 0.03 seconds applied to: sbox0Mm/Kg.
+- Low-pass filter with time constant 0.15 seconds applied to: prDM wetCDOM wetCDOM1.
+- Cell thermal mass correction applied to conductivity from sensors: [primary, secondary]. 
+   > Parameters ALPHA: [0.0300, 0.0300], TAU: [7.0000, 7.0000].
+- Loop editing applied.
+   > Parameters: Minimum velocity (ms-1): 0.250, Soak depth range (m): 15.0 to 25, 
+   > Bad scans excluded. Deck pressure offset: No.
+- Bin averaged (1 decibars).
+   > Bad scans not excluded, skipped over 0 initial scans.
+   > (No surface bin).
+# source_files:
+E.g. 006.HEX, FS2022_CTD.XMLCON -> 006_BIN.CNV
+# featureType:
+profile
+
+###########################
+### VARIABLE ATTRIBUTES ###
+###########################
+
+--------------------------------------------------
+PRES (coordinate)
+--------------------------------------------------
+# units:
+dbar
+# sensor_serial_number:
+0972
+# sensor_calibration_date:
+20-Feb-14
+# coverage_content_type:
+coordinate
+
+--------------------------------------------------
+TIME (coordinate)
+--------------------------------------------------
+# units:
+Days since 1970-01-01 00:00:00
+# standard_name:
+time
+# long_name:
+Average time of measurements
+# SBE_source_variable:
+timeS
+
+--------------------------------------------------
+TEMP1
+--------------------------------------------------
+# units:
+degree_Celsius
+# sensor_serial_number:
+2400
+# sensor_calibration_date:
+26-Apr-22
+# coverage_content_type:
+physicalMeasurement
+# sensor_mount:
+mounted_on_shipborne_profiler
+# manual_editing:
+4 data points have been removed from this variable based on visual inspection.
+
+--------------------------------------------------
+CNDC1
+--------------------------------------------------
+# units:
+S m-1
+# sensor_serial_number:
+3447
+# sensor_calibration_date:
+05-May-22
+# coverage_content_type:
+physicalMeasurement
+# sensor_mount:
+mounted_on_shipborne_profiler
+
+--------------------------------------------------
+DOXY1_instr
+--------------------------------------------------
+# units:
+micromol kg-1
+# sensor_serial_number:
+3481
+# sensor_calibration_date:
+28.06.2022
+# coverage_content_type:
+physicalMeasurement
+# sensor_mount:
+mounted_on_shipborne_profiler
+
+--------------------------------------------------
+CDOM1_instr
+--------------------------------------------------
+# units:
+mg m-3
+# sensor_serial_number:
+1930
+# sensor_calibration_date:
+
+# coverage_content_type:
+physicalMeasurement
+# sensor_mount:
+mounted_on_shipborne_profiler
+
+--------------------------------------------------
+CDOM2_instr
+--------------------------------------------------
+# units:
+mg m-3
+# sensor_serial_number:
+4531
+# sensor_calibration_date:
+
+# coverage_content_type:
+physicalMeasurement
+# sensor_mount:
+mounted_on_shipborne_profiler
+
+--------------------------------------------------
+PSAL1
+--------------------------------------------------
+# units:
+1
+# sensor_serial_number:
+2400, 3447
+# sensor_calibration_date:
+26-Apr-22, 05-May-22
+# coverage_content_type:
+physicalMeasurement
+# sensor_mount:
+mounted_on_shipborne_profiler
+
+--------------------------------------------------
+TIME_SAMPLE
+--------------------------------------------------
+# units:
+Days since 1970-01-01 00:00:00
+# SBE_source_variable:
+timeS
+
+--------------------------------------------------
+STATION
+--------------------------------------------------
+# long_name:
+CTD station ID
+# cf_role:
+profile_id
+
+--------------------------------------------------
+LATITUDE
+--------------------------------------------------
+# standard_name:
+latitude
+# units:
+degree_north
+# long_name:
+latitude
+
+--------------------------------------------------
+LONGITUDE
+--------------------------------------------------
+# standard_name:
+longitude
+# units:
+degree_east
+# long_name:
+longitude
+
+--------------------------------------------------
+CRUISE
+--------------------------------------------------
+# long_name:
+Cruise ID

@@ -1,0 +1,492 @@
+################################################################################
+####  FILE METADATA                                                         ####
+################################################################################
+
+###########################
+### GLOBAL ATTRIBUTES   ###
+###########################
+
+# history:
+2019-09-02 to 2019-09-15: Data collection.
+2021-11-18 to 2022-03-01: Processed to .cnv using SBE software (details in "SBE_processing").
+2023-12-12: Post-processing.
+2023-12-12: Creation of this netcdf file.
+# date_created:
+2023-12-12T02:36:12Z
+# institution:
+Norwegian Polar Institute (NPI)
+# source:
+CTD profiles from SBE911+
+# instrument:
+In Situ/Laboratory Instruments>Profilers/Sounders>CTD
+# data_set_language:
+eng
+# processing_level:
+Instrument data that has been converted to geophysical values
+# license:
+CC-BY 4.0
+# creator_name:
+Norwegian Polar Institute (NPI)
+# creator_email:
+post@npolar.no
+# creator_type:
+institution
+# creator_institution:
+Norwegian Polar Institute (NPI)
+# creator_url:
+www.npolar.no
+# publisher_name:
+Norwegian Polar Institute (NPI)
+# publisher_url:
+www.npolar.no
+# publisher_email:
+post@npolar.no
+# publisher_institution:
+Norwegian Polar Institute (NPI)
+# data_assembly_center:
+NO/NPI
+# time_coverage_start:
+2019-09-02T08:46:40Z
+# time_coverage_end:
+2019-09-15T04:36:24Z
+# time_coverage_resolution:
+variable
+# time_coverage_duration:
+P0000-00-12T19:49:44
+# geospatial_lat_max:
+78.8513
+# geospatial_lon_max:
+9.994
+# geospatial_lat_min:
+77.8817
+# geospatial_lon_min:
+-17.2405
+# geospatial_bounds:
+POLYGON ((-17.25 77.88, -17.25 78.86, 10.0 78.86, 10.0 77.88, -17.25 77.88))
+# geospatial_bounds_crs:
+EPSG:4326
+# geospatial_vertical_min:
+2.0
+# geospatial_vertical_max:
+2703.0
+# geospatial_vertical_positive:
+down
+# geospatial_vertical_units:
+dbar
+# geospatial_bounds_vertical_crs:
+EPSG:5831
+# keywords:
+OCEANS>OCEAN OPTICS>CHLOROPHYLL>CHLOROPHYLL CONCENTRATION,OCEANS>SALINITY/DENSITY>CONDUCTIVITY>CONDUCTIVITY PROFILES,OCEANS>OCEAN TEMPERATURE>OCEAN TEMPERATURE PROFILES,OCEANS>OCEAN CHEMISTRY>OXYGEN,OCEANS>OCEAN CHEMISTRY>ORGANIC MATTER>COLORED DISSOLVED ORGANIC MATTER,OCEANS>OCEAN OPTICS>ATTENUATION/TRANSMISSION,OCEANS>SALINITY/DENSITY>OCEAN SALINITY>OCEAN SALINITY PROFILES
+# binned:
+1 decibars (SBE software)
+# SBE_processing:
+SBE SOFTWARE PROCESSING STEPS (extracted from .cnv file header):
+1. Raw data read from e.g. STA0224.HEX, 203_237_POST_CDOM_MODIFIED.XMLCON.
+2. Oxygen hysteresis correction applied.
+3. Oxygen tau correction applied.
+4. Low-pass filter with time constant 0.03 seconds applied to: sbox0Mm/Kg sbox1Mm/Kg upoly0.
+5. Low-pass filter with time constant 0.15 seconds applied to: prDM wetCDOM flECO-AFL CStarAt0.
+6. Cell thermal mass correction applied to conductivity from sensors: [primary, secondary]. 
+   > Parameters ALPHA: [0.0300, 0.0300], TAU: [7.0000, 7.0000].
+7. Loop editing applied.
+   > Parameters: Minimum velocity (ms-1): 0.250, Soak depth range (m): 3.0 to 20, 
+   > Bad scans excluded. Deck pressure offset: No.
+8. Derived EOS-8 salinity and other variables.
+9. Window filter (cosine, 251) applied to wetCDOM (Bad scans excluded).
+10. Bin averaged (1 decibars).
+   > Bad scans not excluded, skipped over 0 initial scans.
+   > (No surface bin).
+11. Window filter (cosine, 51) applied to wetCDOM (Bad scans excluded).
+12. Window filter (cosine, 11) applied to wetCDOM (Bad scans excluded).
+# source_files:
+E.g. STA0224.HEX, 203_237_POST_CDOM_MODIFIED.XMLCON -> STA0224_BIN.CNV
+# featureType:
+profile
+# standard_name_vocabulary:
+CF Standard Name Table v83
+# instrument_vocabulary:
+NASA/GCMD Instrument Keywords Version 17.2
+# keywords_vocabulary:
+NASA/GCMD Science Keywords 9.1.5
+# iso_topic_category:
+oceans
+# Conventions:
+ACDD-1.3, CF-1.8
+# naming_authority:
+npolar.no
+# ship:
+"Kronprins Haakon"
+
+###########################
+### VARIABLE ATTRIBUTES ###
+###########################
+
+--------------------------------------------------
+PRES (coordinate)
+--------------------------------------------------
+# units:
+dbar
+# sensor_serial_number:
+141612
+# sensor_calibration_date:
+19-Dec-17
+# coverage_content_type:
+physicalMeasurement
+# standard_name:
+sea_water_pressure
+# long_name:
+Pressure due to seawater
+# positive:
+down
+# valid_min:
+-1.0
+# valid_max:
+12000.0
+# axis:
+Z
+# sensor_mount:
+mounted_on_shipborne_profiler
+
+--------------------------------------------------
+TIME (coordinate)
+--------------------------------------------------
+# units:
+Days since 1970-01-01 00:00:00
+# standard_name:
+time
+# long_name:
+Average time of measurements
+# SBE_source_variable:
+timeS
+# axis:
+T
+# coverage_content_type:
+coordinate
+
+--------------------------------------------------
+TEMP1
+--------------------------------------------------
+# units:
+degree_Celsius
+# standard_name:
+sea_water_temperature
+# long_name:
+Sea water temperature (primary sensor)
+# sensor_serial_number:
+03-4535
+# sensor_calibration_date:
+2019-05-19
+# valid_min:
+-3.0
+# valid_max:
+40.0
+# sensor_mount:
+mounted_on_shipborne_profiler
+# reference_scale:
+ITS-90
+# coverage_content_type:
+physicalMeasurement
+
+--------------------------------------------------
+TEMP2
+--------------------------------------------------
+# units:
+degree_Celsius
+# standard_name:
+sea_water_temperature
+# long_name:
+Sea water temperature (secondary sensor)
+# sensor_serial_number:
+03-5884
+# sensor_calibration_date:
+21-May-19
+# valid_min:
+-3.0
+# valid_max:
+40.0
+# sensor_mount:
+mounted_on_shipborne_profiler
+# reference_scale:
+ITS-90
+# coverage_content_type:
+physicalMeasurement
+
+--------------------------------------------------
+CNDC1
+--------------------------------------------------
+# units:
+S m-1
+# standard_name:
+sea_water_electrical_conductivity
+# long_name:
+Seawater electrical conductivity (primary sensor)
+# sensor_serial_number:
+2860
+# sensor_calibration_date:
+09-May-19
+# valid_min:
+0.0
+# valid_max:
+50.0
+# sensor_mount:
+mounted_on_shipborne_profiler
+# coverage_content_type:
+physicalMeasurement
+
+--------------------------------------------------
+CNDC2
+--------------------------------------------------
+# units:
+S m-1
+# standard_name:
+sea_water_electrical_conductivity
+# long_name:
+Seawater electrical conductivity (secondary sensor)
+# sensor_serial_number:
+04-4386
+# sensor_calibration_date:
+09-May-19
+# valid_min:
+0.0
+# valid_max:
+50.0
+# sensor_mount:
+mounted_on_shipborne_profiler
+# coverage_content_type:
+physicalMeasurement
+
+--------------------------------------------------
+DOXY1_instr
+--------------------------------------------------
+# units:
+micromole kg-1
+# standard_name:
+moles_of_oxygen_per_unit_mass_in_sea_water
+# comment:
+ Sensors changed underway.
+# sensor_serial_number:
+A: 3785, B: 1102
+# sensor_calibration_date:
+A: 04-Dec-18, B: 26-Jun-19
+# sensor_mount:
+mounted_on_shipborne_profiler
+# coverage_content_type:
+physicalMeasurement
+# stations_A:
+0224, 0234, 0205, 0207, 0206, 0212, 197, 0226, 0218, 0246, 0236, 0241, 0235, 0253, 0220, 0211, 0217, 200, 0251, 198, 0227, 0243, 0223, Sta0202, 0219, 0238, 0250, 0216, 0214, 196, 0228, 0229, 0239, 0210, 195, 0244, 201, 0240, 0237, 0249, 0231, 0222, 0252, 0245, 0242, 0233, 0213, 0203, 0221, 0209, 0225, 199, 0204, 0248, 0232, 0215, 0208, 0230, 0247
+# stations_B:
+194
+
+--------------------------------------------------
+DOXY2_instr
+--------------------------------------------------
+# units:
+micromole kg-1
+# standard_name:
+moles_of_oxygen_per_unit_mass_in_sea_water
+# sensor_serial_number:
+43-3115
+# sensor_calibration_date:
+05-Jun-19
+# sensor_mount:
+mounted_on_shipborne_profiler
+# coverage_content_type:
+physicalMeasurement
+
+--------------------------------------------------
+CDOM_instr
+--------------------------------------------------
+# units:
+mg m-3
+# long_name:
+Colored dissolved organic matter (CDOM) from CTD fluorometer. Not calibrated with water sample chlorophyll measurements.
+# comment:
+Nominal units are [mg m-3], but water sample calibrations are necessary in order to produce realistic absolute values.
+# sensor_serial_number:
+FLCDRTD-1930
+# sensor_calibration_date:
+13.10.2010
+# sensor_mount:
+mounted_on_shipborne_profiler
+# coverage_content_type:
+physicalMeasurement
+# processing_level:
+Instrument data that has been converted to physical values
+# QC_indicator:
+unknown
+
+--------------------------------------------------
+CHLA_fluorescence
+--------------------------------------------------
+# units:
+mg m-3
+# standard_name:
+chlorophyll_concentration_in_sea_water
+# long_name:
+Chlorophyll-A from CTD fluorometer. Not calibrated with water sample chlorophyll measurements.
+# comment:
+Nominal units are [mg m-3], but water sample calibrations are necessary in order to produce realistic absolute values. No correction for near-surface fluorescence quenching (see e.g. https://doi.org/10.4319/lom.2012.10.483) has been applied.
+# sensor_serial_number:
+FLRTD-1547 analog range 1
+# sensor_calibration_date:
+1/4/2016
+# valid_min:
+-1.9
+# valid_max:
+100.0
+# sensor_mount:
+mounted_on_shipborne_profiler
+# coverage_content_type:
+physicalMeasurement
+# processing_level:
+Instrument data that has been converted to physical values
+# QC_indicator:
+unknown
+
+--------------------------------------------------
+ATTN
+--------------------------------------------------
+# units:
+m-1
+# standard_name:
+volume_beam_attenuation_coefficient_of_radiative_flux_in_sea_water
+# long_name:
+Beam attenuation coefficient
+# sensor_serial_number:
+CST-1839DB
+# sensor_calibration_date:
+2017-12-14
+# valid_min:
+0.0
+# valid_max:
+100.0
+# sensor_mount:
+mounted_on_shipborne_profiler
+# coverage_content_type:
+physicalMeasurement
+
+--------------------------------------------------
+LATITUDE_SAMPLE
+--------------------------------------------------
+# units:
+degree_north
+# sensor_mount:
+mounted_on_shipborne_profiler
+# coverage_content_type:
+physicalMeasurement
+
+--------------------------------------------------
+LONGITUDE_SAMPLE
+--------------------------------------------------
+# units:
+degree_east
+# sensor_mount:
+mounted_on_shipborne_profiler
+# coverage_content_type:
+physicalMeasurement
+
+--------------------------------------------------
+upoly
+--------------------------------------------------
+# sensor_mount:
+mounted_on_shipborne_profiler
+# coverage_content_type:
+physicalMeasurement
+
+--------------------------------------------------
+PSAL
+--------------------------------------------------
+# units:
+1
+# standard_name:
+sea_water_practical_salinity
+# long_name:
+Practical salinity
+# sensor_serial_number:
+03-4535, 2860
+# sensor_calibration_date:
+2019-05-19, 09-May-19
+# valid_min:
+2.0
+# valid_max:
+41.0
+# sensor_mount:
+mounted_on_shipborne_profiler
+# reference_scale:
+PSS-78
+# coverage_content_type:
+physicalMeasurement
+
+--------------------------------------------------
+SBE_FLAG
+--------------------------------------------------
+# units:
+
+# sensor_mount:
+mounted_on_shipborne_profiler
+# coverage_content_type:
+physicalMeasurement
+
+--------------------------------------------------
+TIME_SAMPLE
+--------------------------------------------------
+# units:
+Days since 1970-01-01 00:00:00
+# coverage_content_type:
+coordinate
+# SBE_source_variable:
+timeS
+
+--------------------------------------------------
+STATION
+--------------------------------------------------
+# long_name:
+CTD station ID
+# sensor_mount:
+mounted_on_shipborne_profiler
+# coverage_content_type:
+physicalMeasurement
+# cf_role:
+profile_id
+
+--------------------------------------------------
+LATITUDE
+--------------------------------------------------
+# units:
+degree_north
+# standard_name:
+latitude
+# long_name:
+latitude
+# sensor_mount:
+mounted_on_shipborne_profiler
+# coverage_content_type:
+physicalMeasurement
+# axis:
+Y
+
+--------------------------------------------------
+LONGITUDE
+--------------------------------------------------
+# units:
+degree_east
+# standard_name:
+longitude
+# long_name:
+longitude
+# sensor_mount:
+mounted_on_shipborne_profiler
+# coverage_content_type:
+physicalMeasurement
+# axis:
+X
+
+--------------------------------------------------
+CRUISE
+--------------------------------------------------
+# long_name:
+Cruise ID
+# sensor_mount:
+mounted_on_shipborne_profiler
+# coverage_content_type:
+physicalMeasurement
